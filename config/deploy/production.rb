@@ -7,7 +7,7 @@ set :ssh_options, {
 }
 
 set :application, 'book_store'
-set :repo_url, ''
+set :repo_url, 'git@github.com:sonal-codearena/book_world.git'
 set :deploy_to, '/home/ubuntu/book_store'
 set :branch, 'master'
 set :puma_conf, "#{shared_path}/config/puma.rb"
