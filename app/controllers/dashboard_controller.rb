@@ -5,8 +5,8 @@ class DashboardController < ApplicationController
 
   def search
     categories = {}
-    Category.all.each do|x|
-      categories.merge!({x.name => x.books.where("name ILIKE ?", "#{params[:q]}%").map{|y| {name: y.name }}})
+    Category.all.each do |category|
+      categories.merge!({category.name => category.books.where("name ILIKE ?", "#{params[:q]}%").map{|book| {name: book.name }}})
     end
     render json: categories
   end
