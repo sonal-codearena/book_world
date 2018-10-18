@@ -1,0 +1,31 @@
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Book World</h1>
+      <p class="lead text-muted">You're never alone when you're reading a book.</p>
+    </div>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <% @categories.each do |category| %>
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src="<%= category.image_url %>" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text">
+                  <%= category.name %>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <%= link_to "View", category_path(id: category.id), class: 'btn btn-sm btn-outline-secondary' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</main>
